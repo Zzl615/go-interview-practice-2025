@@ -37,9 +37,9 @@ func benchmark(b *testing.B, rw RW, read, write int) {
 	}
 }
 
-func BenchmarkReadMoreMX(b *testing.B)    { benchmark(b, &Lock{}, 100, 1) }
-func BenchmarkReadMoreRWMX(b *testing.B)  { benchmark(b, &RWLock{}, 100, 1) }
-func BenchmarkWriteMoreMX(b *testing.B)   { benchmark(b, &Lock{}, 10, 100) }
-func BenchmarkWriteMoreRWMX(b *testing.B) { benchmark(b, &RWLock{}, 10, 100) }
-func BenchmarkEqualMX(b *testing.B)       { benchmark(b, &Lock{}, 50, 50) }
-func BenchmarkEqualRWMX(b *testing.B)     { benchmark(b, &RWLock{}, 50, 50) }
+func BenchmarkReadMoreMX(b *testing.B)    { benchmark(b, &Lock{}, 1000, 10) }
+func BenchmarkReadMoreRWMX(b *testing.B)  { benchmark(b, &RWLock{}, 1000, 10) }
+func BenchmarkWriteMoreMX(b *testing.B)   { benchmark(b, &Lock{}, 10, 1000) }
+func BenchmarkWriteMoreRWMX(b *testing.B) { benchmark(b, &RWLock{}, 10, 1000) }
+func BenchmarkEqualMX(b *testing.B)       { benchmark(b, &Lock{}, 500, 500) }
+func BenchmarkEqualRWMX(b *testing.B)     { benchmark(b, &RWLock{}, 500, 500) }
